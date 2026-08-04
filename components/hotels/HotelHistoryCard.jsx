@@ -30,32 +30,32 @@ export default function HotelHistoryCard({ search, onDelete }) {
   }
 
   return (
-    <div className="rounded-2xl border border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-5 hover:shadow-lg hover:border-orange-200 dark:hover:border-orange-900/50 transition">
+    <div className="rounded-2xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-5 hover:shadow-lg hover:border-orange-300 dark:hover:border-orange-900/50 transition">
       <div className="mb-3">
-        <p className="text-[11px] uppercase tracking-wide text-zinc-400 dark:text-zinc-500">Destination</p>
+        <p className="text-[11px] uppercase tracking-wide text-zinc-700 dark:text-zinc-500">Destination</p>
         <h3 className="text-lg font-semibold truncate">{search.destination}</h3>
       </div>
 
-      <div className="grid grid-cols-2 gap-x-3 gap-y-2 mb-4 text-[12.5px] text-zinc-500 dark:text-zinc-400">
+      <div className="grid grid-cols-2 gap-x-3 gap-y-2 mb-4 text-[12.5px] text-zinc-600 dark:text-zinc-500">
         <div>
-          <span className="block text-[10.5px] uppercase tracking-wide text-zinc-400 dark:text-zinc-600">Check-in</span>
+          <span className="block text-[10.5px] uppercase tracking-wide font-semibold text-zinc-800 dark:text-zinc-400">Check-in</span>
           {formatDate(search.checkIn)}
         </div>
         <div>
-          <span className="block text-[10.5px] uppercase tracking-wide text-zinc-400 dark:text-zinc-600">Check-out</span>
+          <span className="block text-[10.5px] uppercase tracking-wide font-semibold text-zinc-800 dark:text-zinc-400">Check-out</span>
           {formatDate(search.checkOut)}
         </div>
         <div>
-          <span className="block text-[10.5px] uppercase tracking-wide text-zinc-400 dark:text-zinc-600">Guests</span>
+          <span className="block text-[10.5px] uppercase tracking-wide font-semibold text-zinc-800 dark:text-zinc-400">Guests</span>
           {search.guests ?? '—'}
         </div>
         <div>
-          <span className="block text-[10.5px] uppercase tracking-wide text-zinc-400 dark:text-zinc-600">Hotels Found</span>
+          <span className="block text-[10.5px] uppercase tracking-wide font-semibold text-zinc-800 dark:text-zinc-400">Hotels Found</span>
           {hotelsCount}
         </div>
       </div>
 
-      <div className="flex items-center gap-1.5 mb-5 text-[12px] text-zinc-400 dark:text-zinc-500">
+      <div className="flex items-center gap-1.5 mb-5 text-[12px] text-zinc-600 dark:text-zinc-500">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 shrink-0">
           <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
         </svg>

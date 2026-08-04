@@ -81,10 +81,10 @@ export default function RecommendationDetails({ recommendation }) {
   return (
     <div>
       <div className="mb-8">
-        <p className="text-[12px] uppercase tracking-wide text-zinc-400 dark:text-zinc-500 mb-1">Recommendation for</p>
+        <p className="text-[12px] uppercase tracking-wide text-zinc-800 dark:text-zinc-500 mb-1">Recommendation for</p>
         <h1 className="text-2xl sm:text-3xl font-semibold wrap-break-word mb-3">{destination}</h1>
 
-        <div className="flex items-center gap-1.5 text-[12.5px] text-zinc-400 dark:text-zinc-500 mb-4">
+        <div className="flex items-center gap-1.5 text-[12.5px] text-zinc-800 dark:text-zinc-400 mb-4">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 shrink-0">
             <path d="M8 2v4M16 2v4M3 10h18M5 4h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z" />
           </svg>
@@ -109,7 +109,7 @@ export default function RecommendationDetails({ recommendation }) {
             const items = aiResult[key];
             if (!items || items.length === 0) return null;
             return (
-              <div key={key} className="rounded-2xl border border-zinc-100 dark:border-zinc-800 p-4 sm:p-5">
+              <div key={key} className="rounded-2xl border border-zinc-300 dark:border-zinc-800 p-4 sm:p-5">
                 <div className="flex items-center gap-2.5 mb-4">
                   <div className="w-9 h-9 rounded-xl bg-linear-to-r from-orange-600 to-red-600 dark:from-orange-700 dark:to-rose-800 flex items-center justify-center shrink-0">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-4.5 h-4.5">
@@ -131,7 +131,7 @@ export default function RecommendationDetails({ recommendation }) {
           })}
         </div>
       ) : (
-        <p className="text-[14px] text-zinc-500 dark:text-zinc-400">No AI results available for this recommendation.</p>
+        <p className="text-[14px] text-zinc-800 dark:text-zinc-400">No AI results available for this recommendation.</p>
       )}
     </div>
   );

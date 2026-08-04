@@ -25,10 +25,10 @@ export default function TripCard({ trip, onDelete }) {
   }
 
   return (
-    <div className="rounded-2xl border border-zinc-100 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-5 hover:shadow-lg hover:border-orange-200 dark:hover:border-orange-900/50 transition">
+    <div className="rounded-2xl border border-zinc-300 dark:border-zinc-800 bg-white dark:bg-zinc-900/40 p-5 hover:shadow-lg hover:border-orange-200 dark:hover:border-orange-900/50 transition">
       <div className="flex items-start justify-between gap-3 mb-3">
         <div className="min-w-0">
-          <p className="text-[11px] uppercase tracking-wide text-zinc-400 dark:text-zinc-500">Destination</p>
+          <p className="text-[11px] uppercase tracking-wide text-zinc-600 dark:text-zinc-500">Destination</p>
           <h3 className="text-lg font-semibold truncate">{trip.destination}</h3>
         </div>
         <span className={`text-[10.5px] font-bold px-2.5 py-1 rounded-full capitalize shrink-0 ${statusStyles[trip.status] || statusStyles.pending}`}>
@@ -87,9 +87,9 @@ export default function TripCard({ trip, onDelete }) {
 
 function MiniStat({ label, value }) {
   return (
-    <div className="bg-zinc-50 dark:bg-zinc-900 rounded-lg py-2">
+    <div className="bg-zinc-200 dark:bg-zinc-900 rounded-lg py-2">
       <p className="text-[13px] font-bold truncate px-1">{value}</p>
-      <p className="text-[10px] text-zinc-400 dark:text-zinc-500">{label}</p>
+      <p className="text-[10px] text-zinc-800 dark:text-zinc-500">{label}</p>
     </div>
   );
 }

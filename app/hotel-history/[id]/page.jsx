@@ -52,7 +52,7 @@ export default function HotelSearchDetailPage() {
   return (
     <ProtectedRoute allowedRoles={['traveler']}>
       <div className="min-h-screen bg-white dark:bg-zinc-950">
-        <DashboardNav/>
+        <DashboardNav />
 
         <main className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
           <div className="flex items-center justify-between gap-4 mb-6">
@@ -111,7 +111,7 @@ export default function HotelSearchDetailPage() {
           {hotelSearch && !loading && (
             <>
               <div className="mb-8">
-                <p className="text-[12px] uppercase tracking-wide text-zinc-400 dark:text-zinc-500 mb-1">
+                <p className="text-[12px] uppercase tracking-wide text-zinc-600 dark:text-zinc-500 mb-1">
                   Hotel search for
                 </p>
                 <h1 className="text-2xl sm:text-3xl font-semibold wrap-break-word mb-3">
@@ -119,8 +119,8 @@ export default function HotelSearchDetailPage() {
                 </h1>
 
                 <div className="flex flex-wrap gap-x-6 gap-y-2 text-[13px] text-zinc-500 dark:text-zinc-400">
-                  <span>Check-in: {formatDate(hotelSearch.check_in)}</span>
-                  <span>Check-out: {formatDate(hotelSearch.check_out)}</span>
+                  <span>Check-in: {formatDate(hotelSearch.checkIn)}</span>
+                  <span>Check-out: {formatDate(hotelSearch.checkOut)}</span>
                   <span>Guests: {hotelSearch.guests ?? '—'}</span>
                   <span>Hotels found: {hotelSearch.hotels?.length ?? 0}</span>
                 </div>

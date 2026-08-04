@@ -52,7 +52,7 @@ export default function RecommendationsPage() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
               <h1 className="text-xl sm:text-2xl font-semibold">My Recommendations</h1>
-              <p className="text-[13.5px] sm:text-[14px] text-zinc-500 dark:text-zinc-400 mt-1">
+              <p className="text-[13.5px] sm:text-[14px] text-zinc-700 dark:text-zinc-400 mt-1">
                 {recommendations.length} {recommendations.length === 1 ? 'recommendation' : 'recommendations'} generated so far
               </p>
             </div>

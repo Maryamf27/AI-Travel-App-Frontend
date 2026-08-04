@@ -52,7 +52,7 @@ export default function DashboardPage() {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
             <div>
               <h1 className="text-xl sm:text-2xl font-semibold">Welcome back, {user?.name?.split(' ')[0]}</h1>
-              <p className="text-[13.5px] sm:text-[14px] text-zinc-500 dark:text-zinc-400 mt-1">
+              <p className="text-[13.5px] sm:text-[14px] text-zinc-700 dark:text-zinc-400 mt-1">
                 {trips.length} {trips.length === 1 ? 'trip' : 'trips'} planned so far
               </p>
             </div>

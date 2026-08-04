@@ -62,12 +62,12 @@ export default function DashboardNav() {
             </div>
             <div>
               <p className="text-[13px] font-semibold leading-tight">{user?.name}</p>
-              <p className="text-[11px] text-zinc-400 dark:text-zinc-500 leading-tight capitalize">{user?.role?.replace('_', ' ')}</p>
+              <p className="text-[11px] text-zinc-600 dark:text-zinc-400 leading-tight capitalize">{user?.role?.replace('_', ' ')}</p>
             </div>
           </div>
           <button
             onClick={logout}
-            className="text-[12.5px] sm:text-[13px]  border px-4 py-2 rounded-full border-zinc-200 dark:border-zinc-800 font-semibold text-zinc-500 dark:text-zinc-400 hover:text-red-600 dark:hover:text-red-400 transition whitespace-nowrap"
+            className="text-[12.5px] sm:text-[13px]  border px-4 py-2 rounded-full border-zinc-200 dark:border-zinc-800 font-semibold text-zinc-700 dark:text-zinc-400 hover:text-red-600 dark:hover:text-red-400 transition whitespace-nowrap"
           >
             Log out
           </button>
