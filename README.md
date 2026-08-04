@@ -28,14 +28,14 @@ The client for the AI Travel Planner platform. Built with the Next.js App Router
 - Profile & JWT-protected routes
 - Dark / Light theme
 
-### 🧑‍💼 Travel Agent *(new)*
+### 🧑‍💼 Travel Agent
 - Responsive sidebar + top navigation dashboard
 - Client, booking, and revenue overview cards
 - Quick actions and recent activity feed
 - Profile management
 - "Coming Soon" states for in-progress modules (Clients, Bookings, Packages)
 
-### 🛡️ Admin *(new)*
+### 🛡️ Admin 
 - Platform-wide statistics (users, travelers, agents, trips) — live data
 - User Management with search & account removal
 - Agent Management (filtered user view)
