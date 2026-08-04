@@ -70,7 +70,7 @@ export default function RecommendationForm({ onSuccess, onError }) {
 
       <form onSubmit={handleSubmit} className="space-y-5">
         <div>
-          <label className="block text-[12.5px] font-semibold mb-1.5">Destination</label>
+          <label className="block text-[12.5px] font-semibold mb-1.5">Destination (Must be City) </label>
           <input
             type="text"
             required
