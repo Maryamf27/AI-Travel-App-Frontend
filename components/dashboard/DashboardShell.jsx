@@ -33,11 +33,10 @@ function SidebarLinks({ navItems, pathname, onNavigate }) {
             key={item.href}
             href={item.href}
             onClick={onNavigate}
-            className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[13.5px] font-semibold transition ${
-              active
+            className={`flex items-center gap-3 px-3.5 py-2.5 rounded-xl text-[13.5px] font-semibold transition ${active
                 ? 'bg-orange-50 dark:bg-orange-950/30 text-orange-700 dark:text-orange-400'
                 : 'text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 hover:bg-zinc-50 dark:hover:bg-zinc-900'
-            }`}
+              }`}
           >
             {Icon && <Icon className="w-4.5 h-4.5 shrink-0" strokeWidth={2.2} />}
             {item.label}
@@ -143,7 +142,7 @@ export default function DashboardShell({ navItems, roleLabel, pageTitle, childre
           </div>
         </header>
 
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-10">{children}</main>
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-1 lg:py-3">{children}</main>
       </div>
     </div>
   );

@@ -87,8 +87,8 @@ export default function UserManagementTable({ roleFilter, emptyTitle, emptyDescr
           description={emptyDescription || 'Try a different search term.'}
         />
       ) : (
-        <div className="rounded-2xl border border-zinc-100 dark:border-zinc-800 overflow-hidden">
-          <div className="hidden sm:grid grid-cols-[1.6fr_1.4fr_1fr_1fr_auto] gap-3 px-5 py-3 bg-zinc-50 dark:bg-zinc-900/60 text-[11px] font-bold uppercase tracking-wide text-zinc-400 dark:text-zinc-500">
+        <div className="rounded-2xl border border-zinc-300 dark:border-zinc-800 overflow-hidden">
+          <div className="hidden sm:grid grid-cols-[1.6fr_1.4fr_1fr_1fr_40px] gap-3 px-5 py-3 bg-zinc-50 dark:bg-zinc-900/60 text-[11px] font-bold uppercase tracking-wide text-zinc-400 dark:text-zinc-500">
             <span>Name</span>
             <span>Email</span>
             <span>Role</span>
@@ -97,36 +97,67 @@ export default function UserManagementTable({ roleFilter, emptyTitle, emptyDescr
           </div>
           <div className="divide-y divide-zinc-100 dark:divide-zinc-800">
             {users.map((u) => (
-              <div
-                key={u._id}
-                className="grid sm:grid-cols-[1.6fr_1.4fr_1fr_1fr_auto] gap-1.5 sm:gap-3 px-5 py-4 items-center"
-              >
-                <div className="flex items-center gap-2.5 min-w-0">
-                  <div className="w-8 h-8 rounded-full bg-orange-100 dark:bg-orange-950/40 flex items-center justify-center text-[12px] font-bold text-orange-700 dark:text-orange-400 shrink-0">
-                    {u.name?.[0]?.toUpperCase() || '?'}
+              <div key={u._id} className="px-5 py-4">
+                {/* Mobile view */}
+                <div className="flex sm:hidden items-start justify-between gap-3">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-9 h-9 rounded-full bg-orange-100 dark:bg-orange-950/40 flex items-center justify-center text-[13px] font-bold text-orange-700 dark:text-orange-400 shrink-0">
+                      {u.name?.[0]?.toUpperCase() || '?'}
+                    </div>
+                    <div className="min-w-0">
+                      <p className="text-[13.5px] font-semibold truncate">{u.name}</p>
+                      <p className="text-[12px] text-zinc-500 dark:text-zinc-400 truncate">{u.email}</p>
+                    </div>
                   </div>
-                  <span className="text-[13.5px] font-semibold truncate">{u.name}</span>
-                </div>
-                <span className="text-[13px] text-zinc-500 dark:text-zinc-400 truncate">{u.email}</span>
-                <span>
-                  <span className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full ${ROLE_STYLES[u.role] || ''}`}>
-                    {roleLabel(u.role)}
-                  </span>
-                </span>
-                <span className="text-[12.5px] text-zinc-400 dark:text-zinc-500">
-                  {u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '—'}
-                </span>
-                <div className="flex justify-start sm:justify-end">
                   {u._id !== currentUser?._id && u.role !== 'admin' && (
                     <button
                       onClick={() => handleDelete(u._id, u.name)}
                       disabled={deletingId === u._id}
-                      className="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/20 dark:hover:text-red-400 transition disabled:opacity-50"
+                      className="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/20 dark:hover:text-red-400 transition disabled:opacity-50 shrink-0"
                       aria-label={`Remove ${u.name}`}
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
                   )}
+                </div>
+                <div className="flex sm:hidden items-center gap-2 mt-2.5 pl-11.5">
+                  <span className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full ${ROLE_STYLES[u.role] || ''}`}>
+                    {roleLabel(u.role)}
+                  </span>
+                  <span className="text-[12px] text-zinc-400 dark:text-zinc-500">
+                    Joined {u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '—'}
+                  </span>
+                </div>
+
+                {/* Desktop view */}
+                <div className="hidden sm:grid grid-cols-[1.6fr_1.4fr_1fr_1fr_40px] gap-3 items-center">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-8 h-8 rounded-full bg-orange-100 dark:bg-orange-950/40 flex items-center justify-center text-[12px] font-bold text-orange-700 dark:text-orange-400 shrink-0">
+                      {u.name?.[0]?.toUpperCase() || '?'}
+                    </div>
+                    <span className="text-[13.5px] font-semibold truncate">{u.name}</span>
+                  </div>
+                  <span className="text-[13px] text-zinc-500 dark:text-zinc-400 truncate">{u.email}</span>
+                  <span>
+                    <span className={`inline-block text-[11px] font-bold px-2.5 py-1 rounded-full ${ROLE_STYLES[u.role] || ''}`}>
+                      {roleLabel(u.role)}
+                    </span>
+                  </span>
+                  <span className="text-[12.5px] text-zinc-400 dark:text-zinc-500">
+                    {u.createdAt ? new Date(u.createdAt).toLocaleDateString() : '—'}
+                  </span>
+                  <div className="flex justify-end">
+                    {u._id !== currentUser?._id && u.role !== 'admin' && (
+                      <button
+                        onClick={() => handleDelete(u._id, u.name)}
+                        disabled={deletingId === u._id}
+                        className="w-8 h-8 rounded-lg flex items-center justify-center text-zinc-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/20 dark:hover:text-red-400 transition disabled:opacity-50"
+                        aria-label={`Remove ${u.name}`}
+                      >
+                        <Trash2 className="w-4 h-4" />
+                      </button>
+                    )}
+                  </div>
                 </div>
               </div>
             ))}

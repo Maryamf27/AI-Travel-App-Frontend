@@ -108,14 +108,14 @@ function Hero() {
         className="pointer-events-none absolute inset-0 opacity-70 dark:opacity-30"
         style={{ background: 'radial-gradient(60% 50% at 85% 10%, rgba(234,88,12,0.14) 0%, transparent 60%)' }}
       />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-24 grid lg:grid-cols-2 gap-10 lg:gap-16 items-center relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 pt-12 sm:pt-20 pb-16 sm:pb-24 grid lg:grid-cols-2 gap-10 lg:gap-16 justify-center items-center relative">
         <div>
           <div className={`inline-flex items-center gap-2 ${ACCENT_BG_SOFT} border ${ACCENT_BORDER_SOFT} rounded-full px-3.5 py-1.5 mb-5 sm:mb-6`}>
             <span className="w-1.5 h-1.5 rounded-full bg-orange-600 dark:bg-orange-500" />
             <span className="text-[11.5px] sm:text-[12.5px] font-semibold text-orange-700 dark:text-orange-400">Enterprise Travel Platform</span>
           </div>
 
-          <h1 className="text-[34px] leading-[1.12] sm:text-5xl sm:leading-[1.08] font-semibold font-[Space_Grotesk] mb-5 sm:mb-6">
+          <h1 className="text-[34px] leading-[1.12]  sm:text-5xl sm:leading-[1.08] font-semibold font-[Space_Grotesk] mb-5 sm:mb-6">
             Your whole trip,
             <br />
             planned by <span className={ACCENT_TEXT}>AI.</span>
@@ -215,7 +215,7 @@ function TrustBar() {
   ];
   return (
     <section className="border-y border-zinc-100 dark:border-zinc-900 bg-gray-100 dark:bg-zinc-900/40">
-      <div className="max-w-7xl mx-auto sm:text-center text-start px-4 sm:px-6 py-8 sm:py-10 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+      <div className="max-w-7xl mx-auto text-center  px-4 sm:px-6 py-8 sm:py-10 grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
         {stats.map(([num, label]) => (
           <div key={label}>
             <p className="text-xl sm:text-2xl font-semibold font-[Space_Grotesk] text-zinc-900 dark:text-zinc-50">{num}</p>
